@@ -9,7 +9,6 @@ namespace Task6
     {
         const string fileName = "StaffList.txt";
 
-
         static void ShowRecordsForThePeriod()
         {
             List<string> staffList = new List<string>(File.ReadAllLines(fileName));
@@ -60,13 +59,11 @@ namespace Task6
                 }
                 repozitory.employee[iteration].Height = Convert.ToByte(z);
                 ij++;
-                string v = String.Empty;
                 while (worker[ij] != '#')
                 {
-                    v += worker[ij].ToString();
+                    repozitory.employee[iteration].Birthday += worker[ij].ToString();
                     ij++;
                 }
-                repozitory.employee[iteration].Birthday = Convert.ToDateTime(v);
                 ij++;
                 while (ij < worker.Length)
                 {
@@ -142,13 +139,13 @@ namespace Task6
                 }
                 repozitory.employee[iteration].Height = Convert.ToByte(z);
                 ij++;
-                string v = String.Empty;
+
                 while (worker[ij] != '#')
                 {
-                    v += worker[ij].ToString();
+                    repozitory.employee[iteration].Birthday += worker[ij].ToString();
                     ij++;
                 }
-                repozitory.employee[iteration].Birthday = Convert.ToDateTime(v);
+
                 ij++;
                 while (ij < worker.Length)
                 {
@@ -158,8 +155,8 @@ namespace Task6
                 iteration++;
             }
 
-            Console.WriteLine($"\nДля сортировки записей от новых к старым нажмите 1" +
-                "\nДля сортировки записей от старых к новым нажмите 2");
+            Console.WriteLine($"\nДля сортировки записей от старых к новым нажмите 1" +
+                "\nДля сортировки записей от новых к старым нажмите 2");
             char key4 = Console.ReadKey(true).KeyChar;
             switch (key4)
             {
@@ -196,7 +193,6 @@ namespace Task6
                 {
                     line = new StringBuilder((reader.ReadLine()));
                     id = Convert.ToString(line[0]);
-
                 }
             }
             List<string> lines = new List<string>(File.ReadAllLines(fileName));
@@ -371,18 +367,8 @@ namespace Task6
                     break;
             }
             Console.ReadKey();
-
-
-
-
-
         }
-
-
-
     }
-
-
 }
 
 

@@ -1,6 +1,4 @@
 ﻿using System;
-
-
 namespace Task6
 {
     struct Repozitory
